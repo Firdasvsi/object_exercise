@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Задача 1</h3>
+    <script>
+        const cars = {
+            Tesla: {
+                name: 'Tesla',
+                wheels: 4,
+                doors: 4,
+                isStarted: true,
+                hp: 670
+            },
+            BMW: {
+                name: 'BMW',
+                wheels: 4,
+                doors: 4,
+                isStarted: false,
+                hp: 450
+            },
+            Ford: {
+                name: 'Ford',
+                wheels: 4,
+                doors: 4,
+                isStarted: true,
+                hp: 300
+            },
+            Toyota: {
+                name: 'Toyota',
+                wheels: 4,
+                doors: 4,
+                isStarted: false,
+                hp: 150
+            }
+        };
+
+        const getCar = (carName) => {
+            if (cars[carName]) {
+                return cars[carName]; 
+            } else {
+                return `Автомобиль с маркой "${carName}" не найден.`; 
+            }
+        };
+
+        // Пример использования
+        console.log(getCar('Tesla')); // Вывод: { name: 'Tesla', wheels: 4, doors: 4, isStarted: true, hp: 670 }
+        console.log(getCar('Mercedes')); // Вывод: Автомобиль с маркой "Mercedes" не найден.
+
+    </script>
+    <h3>Задача 2</h3>
+    <script>
+    
+        const automobile = {
+            Tesla: {
+                name: 'Tesla',
+                wheels: 4,
+                doors: 4,
+                isStarted: true,
+                hp: 670
+            },
+            BMW: {
+                name: 'BMW',
+                wheels: 4,
+                doors: 4,
+                isStarted: false,
+                hp: 450
+            },
+            Ford: {
+                name: 'Ford',
+                wheels: 4,
+                doors: 4,
+                isStarted: true,
+                hp: 300
+            },
+            Toyota: {
+                name: 'Toyota',
+                wheels: 4,
+                doors: 4,
+                isStarted: false,
+                hp: 150
+            }
+        };
+
+        const printCarNames = () => {
+            for (let carName in automobile) {
+                console.log(carName); 
+            }
+        };
+
+      
+        printCarNames();
+        // Вывод:
+        // Tesla
+        // BMW
+        // Ford
+        // Toyota
+
+    </script>
+    <h3>Задача 3</h3>
+    <script>
+       
+        const createCar = (additionalProperties) => {
+          
+            const baseCar = {
+                wheels: 4,
+                doors: 4,
+                isStarted: false
+            };
+
+           
+            return { ...baseCar, ...additionalProperties };
+        };
+
+        
+        console.log(createCar({ name: 'Haval', hp: 198 }));
+        // Вывод:
+        // {
+        //   wheels: 4,
+        //   doors: 4,
+        //   isStarted: false,
+        //   name: 'Haval',
+        //   hp: 198
+        // }
+
+    </script>
+</body>
+
+</html>
